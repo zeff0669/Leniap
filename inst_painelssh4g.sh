@@ -38,7 +38,7 @@ apt install php7.4-cli -y
 apt install php7.4-ssh2 -y
 apt install php7.4-mysql -y
 
-install_path = "/var/www/html";
+install_path="/var/www/html";
 
 # Solicitar se deseja usar uma porta personalizada para o Apache
 read -p "Deseja usar uma porta personalizada para o Apache? (S/N): " custom_port
@@ -76,12 +76,14 @@ phpenmod mcrypt
 systemctl restart apache2
 rm "$install_path/index.html"
 mv /var/www/html/painelssh4g.zip /
+cd /
 unzip /painelssh4g.zip
+rm painelssh4g*.zip
+cd -
 rm -rf /var/www/html/phpmyadmin
 chown -R root:www-data "$install_path"
 chmod 775 -R "$install_path"
 find "$install_path" -type f -exec chmod 664 {} \;
-rm painelssh4g*.zip
 systemctl restart mysql
 #clear
 }
