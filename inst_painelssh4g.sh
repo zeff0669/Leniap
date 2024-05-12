@@ -38,7 +38,7 @@ apt install php7.4-cli -y
 apt install php7.4-ssh2 -y
 apt install php7.4-mysql -y
 
-$install_path = "/var/www/html";
+install_path = "/var/www/html";
 
 # Solicitar se deseja usar uma porta personalizada para o Apache
 read -p "Deseja usar uma porta personalizada para o Apache? (S/N): " custom_port
