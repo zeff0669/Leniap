@@ -78,9 +78,10 @@ rm "$install_path/index.html"
 mv /var/www/html/painelssh4g.zip /
 unzip /painelssh4g.zip
 rm -rf /var/www/html/phpmyadmin
-#chown -R root:www-data "$install_path"
-#chmod 775 -R "$install_path"
-#rm atlas*.zip
+chown -R root:www-data "$install_path"
+chmod 775 -R "$install_path"
+find "$install_path" -type f -exec chmod 664 {} \;
+rm painelssh4g*.zip
 systemctl restart mysql
 #clear
 }
